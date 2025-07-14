@@ -1,0 +1,50 @@
+# Logs
+*.log
+
+# Terraform
+*.tfstate
+*.tfstate.backup
+.terraform/
+
+# Ansible
+*.retry
+*.facts
+
+# Kubernetes
+*.kubeconfig
+kubeconfig*
+*.config
+
+# CI/CD
+dist/
+build/
+tmp/
+*.bak
+
+# IDE / Editors
+.vscode/
+.idea/
+*.swp
+
+# OS / Desktop
+.DS_Store
+Thumbs.db
+
+
+# Markdown backup
+*.md.bak
+
+
+*.log
+*.tmp
+*.bak
+*.swp
+.vscode/
+*.env
+__pycache__/
+terraform.tfstate*
+
+*.tfvars
+.env.local
+secrets.yml
+
