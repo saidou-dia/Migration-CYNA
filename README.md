@@ -27,3 +27,6 @@ Voici une vue simplifiée de l’architecture cible combinant les environnements
                               +------------+
 
 <img width="921" height="567" alt="schema_azure_paris_geneve" src="https://github.com/user-attachments/assets/6660ba91-bd6d-4748-b5bb-6ef4c7ce19bc" />
+
+
+
