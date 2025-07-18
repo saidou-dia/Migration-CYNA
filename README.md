@@ -6,10 +6,6 @@ Voici une vue simplifiée de l’architecture cible combinant les environnements
 
 ![Schéma de l’infrastructure cible](./00-docs/infra/schema_azure_paris_geneve.png)
 
-# Migration IT Paris → Genève vers Azure
-
-## Vue d’ensemble du projet
-
 Ce projet vise à migrer l’infrastructure IT de la filiale Paris vers le siège de Genève, en tirant parti des services cloud Microsoft Azure. L’objectif est d’améliorer la résilience, la sécurité et la modernisation de l’environnement informatique, tout en garantissant une transition maîtrisée entre les infrastructures on-premise et cloud.
 
 ---
