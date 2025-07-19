@@ -1,58 +1,61 @@
-Plan Prévisionnel des Locaux – Genève (Post-Déménagement)
+## Typologie des Utilisateurs – Siège de Genève (200 collaborateurs, 100 postes physiques)
 
-1. Répartition des Postes Utilisateurs
+Dans le cadre du regroupement des collaborateurs sur le nouveau site de Genève, la société Cyna adopte une organisation hybride intégrant télétravail, mobilité et partage de postes. Bien que la structure compte **200 collaborateurs**, seuls **100 postes de travail physiques** sont prévus dans les locaux, grâce à une stratégie d’optimisation des espaces et des usages (VDI, télétravail, mobilité).
 
-| Type d’espace     | Nombre d’unités | Postes total   |
-| ----------------- | --------------- | -------------- |
-| Bureaux 1 poste   | 11              | 11             |
-| Bureaux 2 postes  | 12              | 24             |
-| Bureaux 3 postes  | 11              | 33             |
-| Open space        | 1               | 32             |
-| Salles de réunion | 5               | -              |
-| **Total**         | -               | **100 postes** |
+### Objectif
 
-La répartition montre une diversité de types d’espaces adaptés aux besoins variés.
+- Adapter les ressources matérielles au mode de travail hybride
+- Réduire les coûts d’aménagement tout en assurant la productivité
+- Permettre un accès sécurisé et performant aux outils via des solutions SaaS, VDI, EDR/XDR
 
-Open space accueillera 32 postes, soit un tiers des utilisateurs, ce qui suggère un espace collaboratif important.
+---
 
+### Répartition des utilisateurs par fonction
 
+| Type d'utilisateur                | Nb approx. | Équipements                             | Observations                                       |
+|----------------------------------|------------|------------------------------------------|----------------------------------------------------|
+| Comptabilité / Finance           | 15         | PC fixe + imprimante partagée            | Sédentaires, présents quotidiennement              |
+| Ressources Humaines              | 10         | PC portable                              | Télétravail partiel, mobilité                      |
+| Direction / Managers             | 10         | PC portable + smartphone                 | Itinérants, présence ponctuelle                    |
+| Commercial / Marketing           | 40         | PC portable + smartphone                 | Télétravail, déplacements fréquents                |
+| Production / Opérations          | 25         | PC fixe ou terminal dédié                | Sédentaires, ou en atelier                         |
+| Support Technique / Maintenance  | 20         | PC portable + téléphone                  | Semi-itinérants, besoins sur site et à distance    |
+| Développement / IT internes      | 20         | PC fixe + portable + smartphone          | Présence régulière, besoins techniques             |
+| Utilisateurs Support / Admin     | 40         | PC fixe ou VDI                           | Rotation d’équipes, support bureautique            |
+| Accueil / Logistique             | 10         | PC fixe ou tablette                      | Présence physique continue                         |
 
-2. Infrastructure IT – Salle Machines (Zone Critique)
+---
 
-Située au centre-droit du plan (identifiée en vert), la salle technique est prévue pour héberger l’ensemble des équipements critiques de l’entreprise :
+### Répartition indicative des 100 postes physiques
 
-Serveurs physiques Proxmox (VDI, Active Directory, DNS, etc.)
+| Fonction                         | Postes alloués (fixes ou partagés) |
+|----------------------------------|------------------------------------|
+| Comptabilité / Finance           | 15                                 |
+| Production / Opérations          | 20                                 |
+| Développement / IT               | 15                                 |
+| Support / Admin                  | 30                                 |
+| Accueil / Logistique             | 5                                  |
+| Open Space partagé (RH, Managers, Commerciaux) | 15                 |
 
-Pare-feux (type FortiGate) pour la sécurisation réseau
+**Total** : 100 postes
 
-Switches cœur de réseau / distribution
+---
 
-Baies de stockage (NAS / SAN) pour les données centralisées
+### Points clés
 
-Onduleurs (UPS) pour la continuité d’alimentation
+- Le dimensionnement réseau et IT reste prévu pour **200 utilisateurs simultanés ou distants**.
+- La plateforme SaaS de Cyna, les postes VDI et les solutions de sécurité (EDR/XDR) permettent un accès distant sécurisé aux ressources internes.
+- La stratégie de postes partagés (hot desking) et de travail hybride permet une meilleure flexibilité et une réduction des coûts d’infrastructure.
 
-Climatisation dédiée pour la stabilité thermique
-
-3. Intérêt du Plan dans le Contexte du Projet de Migration
-
-Ce plan joue un rôle essentiel pour :
-
-Estimer les besoins d’infrastructure et d’aménagement au sein du nouveau siège
-
-Prévoir le dimensionnement réseau : nombre de ports, fibre, VLAN, backbone
-
-Concevoir un socle homogène avec les autres sites (ex. Paris)
-
-Centraliser les services IT critiques à Genève dans un environnement sécurisé et redondant
-
-Préparer la mise en œuvre du VDI et des accès utilisateurs à distance
-
-Voici le schema provisionnel locaux à geneve
-![plan prévisionnel locaux à Genève](https://github.com/user-attachments/assets/7b45e879-930b-4ae1-81f8-35f28fa94533)
-
-Voici le schema IT Du siege de Geneve 
-
-<img width="548" height="617" alt="siege_geneve" src="https://github.com/user-attachments/assets/6f71434d-1a7f-4e7d-b8b0-41019a21c326" />
+  Voici le schema provisionnel des locaux à Geneve
+![plan prévisionnel locaux à Genève](https://github.com/user-attachments/assets/f53b6db5-f145-4690-99f4-b235059fbf6e)
 
 
+Voici le schema IT des locaux de Geneve 
+
+<img width="548" height="617" alt="siege_geneve" src="https://github.com/user-attachments/assets/f3f90509-ad6c-409e-be38-b1c862d9275e" />
+
+
+
+  
 
