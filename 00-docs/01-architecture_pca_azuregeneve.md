@@ -123,6 +123,16 @@
 
 ---
 
+# Connexions VPN - Azure Genève (Site de Production PCA)
+
+| Origine       | Destination   | Type de lien     | Raison / Service                   |
+|---------------|---------------|------------------|----------------------------------|
+| Filiale_Paris | Azure_Genève  | VPN Site-to-Site | Accès cloud principal pour users |
+| Siège_Genève  | Azure_Genève  | VPN Site-to-Site | PCA principal                    |
+| Azure_Genève  | Azure_Paris   | Global Peering   | Réplication / haute dispo        |
+
+---
+
 ## Sécurité & Accès distants
 - Microsoft Entra ID (Azure AD) pour SSO, MFA, Conditional Access, Identity PIM
 - Accès distants sécurisés (VPN P2S / S2S, MFA, Zero Trust)
