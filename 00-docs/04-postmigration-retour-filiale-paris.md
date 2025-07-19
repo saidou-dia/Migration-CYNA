@@ -10,7 +10,7 @@
 
 - Prometheus pour la collecte de métriques  
 - Grafana pour la visualisation  
-- Loki pour la gestion centralisée des logs  
+- Splunk et XDR pour la gestion centralisée des logs   
 - Alertmanager pour la gestion des alertes  
 - Node Exporter pour les serveurs physiques/VM  
 - Kube-State-Metrics pour les clusters Kubernetes
