@@ -1,4 +1,4 @@
-# 12. - Tests de Charge
+# 12. Tests de Charge
 
 ## 1. Objectif des Tests de Charge
 
