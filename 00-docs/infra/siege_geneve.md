@@ -47,8 +47,7 @@ Dans le cadre du regroupement des collaborateurs sur le nouveau site de Genève,
 - La plateforme SaaS de Cyna, les postes VDI et les solutions de sécurité (EDR/XDR) permettent un accès distant sécurisé aux ressources internes.
 - La stratégie de postes partagés (hot desking) et de travail hybride permet une meilleure flexibilité et une réduction des coûts d’infrastructure.
 
-  Voici le schema provisionnel des locaux à Geneve
-![plan prévisionnel locaux à Genève](https://github.com/user-attachments/assets/f53b6db5-f145-4690-99f4-b235059fbf6e)
+  Voici le schema provisionnel des locaux à Geneve ![plan prévisionnel locaux à Genève](https://github.com/user-attachments/assets/f53b6db5-f145-4690-99f4-b235059fbf6e)
 
 
 Voici le schema IT des locaux de Geneve 
