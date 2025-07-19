@@ -80,11 +80,13 @@
 
 ## 7. Sauvegarde & Restauration
 
-- Sauvegarde des volumes persistants avec **Velero**.
-- Stockage des snapshots dans un **Blob Storage Azure**.
-- Restauration testée périodiquement (runbooks intégrés).
-- Intégration avec **Azure Backup** si besoin pour la couche VM (backup des nœuds si non managés).
-- Gestion des stratégies de rétention et rotation des sauvegardes.
+- Sauvegarde des volumes persistants avec **Kasten K10 (Veeam)** pour Kubernetes.
+- Gestion des stratégies de sauvegarde (rétention, encryption, multi-tenant).
+- Support natif des applications stateful (MySQL, PostgreSQL, MongoDB, etc.).
+- Intégration avec le stockage objet **Azure Blob Storage** pour les backups.
+- Plans de restauration granulaires : namespace, application, PVC, config, etc.
+- Test périodique des restaurations pour valider les scénarios de PRA.
+- Complémentarité avec **Azure Backup** pour les ressources hors AKS.
 
 ---
 
