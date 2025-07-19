@@ -16,42 +16,34 @@
 
 ---
 
-## Réseau Production Principal (VNet Prod Azure Genève)
+## Réseau Production Principal (VNet-PCA-Azure-Geneve)
 - **Adresse VNet** : 10.20.0.0/16
-- Utilisé pour réplication applicative, bases de données, sauvegardes.
+- Utilisation : Réseau principal pour le PCA (Plan de Continuité d’Activité) Azure Genève, incluant réplication applicative, bases de données et sauvegardes.
 
-### Services et fonctions clés
-- SOC / SIEM local (Splunk)
-  - Logs centralisés
-  - Gestion des alertes et incidents
-  - Sécurité : XDR, firewall
+### SOC - SIEM local (Splunk)
+- Logs centralisés  
+- Gestion des alertes & incidents  
+- Sécurité : XDR, Firewall  
 
----
+### Active Directory
+- Domain Controllers  
+- AD CS  
+- DHCP  
+- DNS  
+- AD FS  
 
-## Active Directory et Services d’infrastructure
-- Domain Controllers (Contrôleurs de domaine)
-- AD CS (Certification Services)
-- DHCP, DNS
-- AD FS (Federation Services)
+### Réseau & Postes
+- Équipements virtuels  
+- DevOps & SaaS Dev (subnet 10.10.50.0/24)  
+- SOC accès sécurisé  
 
----
+### Stockage & Sauvegarde
+- Azure File Sync (NAS)  
+- Azure Blob Storage (Backup)  
+- Veeam + Azure Site Recovery (ASR)  
 
-## Réseau & Postes
-- Equipements virtuels
-- DevOps & SaaS Dev (10.10.50.0/24)
-- SOC accès sécurisé
-
----
-
-## Stockage et Sauvegarde
-- Azure File Sync (NAS)
-- Azure Blob Storage (Backup)
-- Veeam + Azure Site Recovery (ASR)
-
----
-
-## Virtualisation
-- Azure Arc pour VM
+### Virtualisation
+- Azure Arc pour VM  
 
 ---
 
