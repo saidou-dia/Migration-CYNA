@@ -59,6 +59,17 @@ Ce document présente les solutions recommandées pour répondre aux exigences d
 
 ## Sauvegarde & PRA/PCA
 
-- **Solution proposée** : `Veeam Backup & Replication`  
-- **Objectif** : Sauvegarde régulière, réplication dans le cloud, restauration rapide en cas de sinistre.
+- **Solutions proposées** :
+  - `Veeam Backup & Replication`
+  - `Azure Backup`
 
+- **Objectif** :
+  - Sauvegarde régulière des machines virtuelles, bases de données et configurations critiques
+  - Réplication inter-région entre Azure Paris (PCA) et Azure Genève (PRA)
+  - Restauration rapide en cas de sinistre, cyberattaque ou défaillance matérielle
+  - Intégration avec la stratégie Zero Trust via segmentation réseau des flux de restauration
+  - Gestion centralisée des politiques de rétention et de conformité
+
+- **Automatisation** :
+  - Déclenchement de scénarios de bascule via scripts (`06-pca-pra/recovery_scripts/`)
+  - Surveillance de l’état des sauvegardes via Prometheus + alertes Grafana
