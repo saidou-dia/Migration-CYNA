@@ -43,17 +43,17 @@ La société Cyna, spécialisée dans la cybersécurité (SOC, EDR/XDR), central
 
 ## 4. Migration depuis Paris
 
-- Déménagement physique des équipements vers Genève
-- Redéploiement ou migration vers Azure selon typologie :
-  - **Serveurs critiques** : redéployés on-prem (SOC)
-  - **Applications utilisateurs** : basculées vers Azure
+- Création d’une infrastructure neuve à Genève (on-premise), conçue selon les meilleures pratiques actuelles.
+-Pas de déménagement physique des équipements : les serveurs et matériels restent à Paris ou sont remplacés par du neuf à Genève
+- Redéploiement des services critiques (SOC, EDR) sur la nouvelle infra genevoise.
+- Basculement des applications utilisateurs vers Azure pour scalabilité et modernisation.
 - Refonte des accès utilisateurs :
-  - Centralisation sur Azure AD
+  - Centralisation sur Azure AD (hybride).
   - Mise en place progressive de SSO/MFA
 
 ## 5. Contraintes et points de vigilance
 
-- Pas d’ExpressRoute → tout repose sur des tunnels VPN/IPSec
+- Pas d’ExpressRoute → tout repose sur des tunnels VPN/IPSec ce qui peut limiter la bande passante et la latence.
 - Performance dégradée actuellement à Paris
 - Pas de MFA/SSO encore en place → ajout dans le planning cible
 - 20 To de données à migrer (cf. planning détaillé)
@@ -65,4 +65,4 @@ La société Cyna, spécialisée dans la cybersécurité (SOC, EDR/XDR), central
 - Possibilité d’intégrer DRaaS ou services managés futurs
 
 ---
-
+Pour le détail des schémas d’architecture et d’infrastructure, se référer aux documents situés dans 00-docs/infra/
