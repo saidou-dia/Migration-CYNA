@@ -1,4 +1,4 @@
-#Architecture réseau de la filiale Paris
+# Architecture réseau de la filiale Paris
 1. Fournisseurs d’accès Internet (FAI)
 FAI principal : Orange – Fibre optique
 FAI secondaire (backup WAN) : Bouygues – 4G/5G
