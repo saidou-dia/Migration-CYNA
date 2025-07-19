@@ -53,7 +53,8 @@ Dans le cadre du regroupement des collaborateurs sur le nouveau site de Genève,
 
 Voici le schema IT des locaux de Geneve 
 
-<img width="548" height="617" alt="siege_geneve" src="https://github.com/user-attachments/assets/f3f90509-ad6c-409e-be38-b1c862d9275e" />
+<img width="589" height="616" alt="siege_geneve" src="https://github.com/user-attachments/assets/d5017f35-4057-4055-ba9f-2b3ffda6b18c" />
+
 
 
 
