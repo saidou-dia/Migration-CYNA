@@ -1,6 +1,3 @@
-# Architecture Siège Genève\n\n## Description générale\n\n(Tu peux compléter ici...)
-
-
 # Architecture Siège Genève – Infrastructure Hybride Locale
 
 ## Connectivité et sécurité
