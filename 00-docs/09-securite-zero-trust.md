@@ -73,3 +73,4 @@ Ce document présente les solutions recommandées pour répondre aux exigences d
 - **Automatisation** :
   - Déclenchement de scénarios de bascule via scripts (`06-pca-pra/recovery_scripts/`)
   - Surveillance de l’état des sauvegardes via Prometheus + alertes Grafana
+  - Azure Monitor` avec alertes sur les coffres Recovery Services et les jobs de sauvegarde
