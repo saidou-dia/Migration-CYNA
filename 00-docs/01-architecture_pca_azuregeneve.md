@@ -5,14 +5,14 @@
 
 ### Subnets et Services
 
-| Subnet                      | CIDR           | Description / Services                                  |
-|-----------------------------|----------------|--------------------------------------------------------|
-| MonitoringSubnet            | 10.30.100.0/24 | Prometheus, Grafana, Alertmanager, Zscaler Tunnel GW  |
-| GRE/IPSec to ZIA            | 10.30.251.0/28 | Tunnel GRE/IPSec vers Zscaler Internet Access (ZIA)    |
-| DNS ResolverSubnet          | 10.30.252.0/27 | Azure DNS Resolver                                     |
-| AzureFirewallSubnet         | 10.30.253.0/26 | Filtrage HTTP/HTTPS via Azure Firewall                 |
-| AzureBastionSubnet          | 10.30.254.0/27 | Azure Bastion (accès sécurisé à VMs)                   |
-| GatewaySubnet               | 10.30.255.0/27 | VPN Gateway (P2S et S2S, IPSec/OpenVPN)                |
+| Subnet                     | CIDR           | Description / Services                                  |
+|----------------------------|----------------|--------------------------------------------------------|
+| MonitoringSubnet           | 10.30.100.0/24 | Prometheus, Grafana, Alertmanager, Zscaler Tunnel GW  |
+| GRE/IPSec to ZIA           | 10.30.251.0/28 | Tunnel GRE/IPSec vers Zscaler Internet Access (ZIA)    |
+| DNS ResolverSubnet         | 10.30.252.0/27 | Azure DNS Resolver                                     |
+| AzureFirewallSubnet        | 10.30.253.0/26 | Filtrage HTTP/HTTPS via Azure Firewall                 |
+| AzureBastionSubnet         | 10.30.254.0/27 | Azure Bastion (accès sécurisé à VMs)                   |
+| GatewaySubnet              | 10.30.255.0/27 | VPN Gateway (P2S et S2S, IPSec/OpenVPN)                |
 
 ---
 
@@ -62,6 +62,57 @@
 
 ---
 
+### 🔧 subnet-dmz-geneve (10.10.20.0/24)
+- **Kubernetes Clusters (SaaS + Shop)** :
+  - **K8s SaaS Front (Web)** – Web frontend SaaS
+  - **K8s Shop Front (Web)** – Web frontend Shop
+- **Cluster Prometheus** :
+  - 4 VMs (16 Go RAM / 4 vCPU chacune)
+  - +2 Pods autoscaling
+  - Prometheus pour supervision applicative
+- **Type de services** :
+  - IaaS (VMs Prometheus)
+  - PaaS (Kubernetes)
+  - SaaS (Apps front-end)
+
+---
+
+### 💾 subnet-db-geneve (10.10.40.0/24)
+- **Bases de données métiers** :
+  - PostgreSQL
+  - MySQL
+  - Oracle
+- **Serveurs critiques** :
+  - **Serveur Comptable** (IaaS)
+    - Données système, logs, transactions financières
+  - **Serveur Trésorerie** (PaaS)
+    - Gestion de trésorerie, sécurité des flux
+- **Monitoring** :
+  - Prometheus pour surveillance BDD et IaaS
+- **Sécurité** :
+  - **Serveurs EDR/XDR** :
+    - Vendor : CrowdStrike Falcon ou SentinelOne
+    - **Spécifications** :
+      - 128 Go RAM
+      - 16 cœurs CPU
+      - 2 To de stockage
+
+- **Type de services** :
+  - IaaS (serveurs BDD & comptables)
+  - PaaS (trésorerie)
+  - EDR/XDR (sécurité)
+
+---
+
+### 🧠 Synthèse des services par sous-réseau
+
+| Sous-Réseau           | Adresse CIDR     | Rôles principaux                          | Types de services                 |
+|-----------------------|------------------|-------------------------------------------|-----------------------------------|
+| subnet-dmz-geneve     | 10.10.20.0/24    | K8s SaaS/Shop Front, Prometheus cluster   | IaaS, PaaS, SaaS                  |
+| subnet-db-geneve      | 10.10.40.0/24    | Bases de données, compta, trésorerie, XDR | IaaS, PaaS, Sécurité (EDR/XDR)     |
+
+---
+
 ## Monitoring & Logs
 - Export / Push vers Azure Monitor + Log Analytics
 - VM logs & metrics
@@ -84,7 +135,6 @@
 - Solutions : CrowdStrike Falcon ou SentinelOne  
 - Performances : 128 Go RAM, 16 cœurs CPU, 2 To stockage
 
-
 ---
 
 ## Réplications & Sauvegardes
@@ -92,5 +142,29 @@
 
 ---
 
+## 🧬 Services Complémentaires
 
+### 🔐 Sécurité & Identité
+- **Microsoft Entra ID (Azure AD)** :
+  - SSO, MFA, Conditional Access
+  - Identity Protection (PIM)
+- **Zscaler (ZIA / ZPA Client Connector)** :
+  - Zero Trust Network Access
 
+### 📨 Messagerie & Collaboration
+- **Microsoft 365** (Exchange Online)
+- **SSO pour SaaS / internes**
+- **Intune / Autopilot / MDM**
+
+### 🧱 Infrastructure
+- **Azure File Sync (NAS)**
+- **Azure Blob Storage (Backup)**
+- **Sauvegardes** : Veeam, Azure Site Recovery
+- **Virtualisation** : Azure Arc pour les VM hybrides
+
+### 🔎 Supervision & Journalisation
+- Azure Monitor + Agent Log Analytics
+  - Logs VM / containers / AKS
+  - Alertes Azure
+- Splunk local (SOC)
+  - Réplication vers SIEM Cloud selon politique
