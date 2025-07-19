@@ -25,9 +25,11 @@ UPS / Onduleur : APC by Schneider Electric
 Fournit une alimentation critique pour tous les équipements essentiels
 
 5. Segmentation réseau (VLANs)
+   
 | VLAN ID | Usage             | Description               |
 | ------- | ----------------- | ------------------------- |
 | VLAN 10 | Postes de travail | PC utilisateurs           |
 | VLAN 20 | Wi-Fi employés    | AP #1, AP #2 – SSID privé |
 | VLAN 30 | Wi-Fi invités     | AP #3 – SSID public       |
 | VLAN 40 | Imprimantes       | Réseau dédié aux prints   |
+
