@@ -1,34 +1,37 @@
 04 - Postmigration - Retour - Filiale - Paris
+## Objectifs
 
-Contenu suggéré à inclure dans ce fichier :
-Résumé de la mise en place post-déménagement
+- Supervision des workloads (Kubernetes, serveurs)  
+- Centralisation des logs système et applicatifs  
+- Suivi des performances réseau et applicatif  
+- Mise en place d’alerting proactif
 
-Déploiement des équipements neufs et réutilisés.
+## Outils déployés
 
-Mise en place du VPN/IPSec vers Genève et Azure.
+- Prometheus pour la collecte de métriques  
+- Grafana pour la visualisation  
+- Loki pour la gestion centralisée des logs  
+- Alertmanager pour la gestion des alertes  
+- Node Exporter pour les serveurs physiques/VM  
+- Kube-State-Metrics pour les clusters Kubernetes
 
-Configuration réseau (VLANs, SSID, redondance FortiGate, etc.).
+## Intégrations
 
-Points positifs :
+- Connexion aux clusters Kubernetes (Genève + Azure)  
+- Export de métriques depuis FortiGate (via SNMP)  
+- Intégration des logs applicatifs SaaS  
+- Dashboard dédiés pour les équipes Dev et Ops
 
-Accès sécurisé aux ressources du siège et d’Azure.
+## Points de vigilance
 
-Infrastructure homogène avec le siège (matériel et configuration).
+- Gestion des droits d’accès sur Grafana (RBAC)  
+- Capacité de stockage pour les logs (rotation, rétention)  
+- Latence possible sur certaines métriques à distance  
+- Sécurisation des endpoints Prometheus / Grafana
 
-Tests utilisateurs concluants (accès aux apps SaaS, Wi-Fi stable, etc.).
+## Prochaines étapes
 
-Difficultés rencontrées :
-
-Retards livraison ou configuration.
-
-Problèmes de performance initiale avec VPN.
-
-Nécessité de réglage des politiques FortiGate pour le Wi-Fi invité, par exemple.
-
-Prochaines étapes / améliorations prévues :
-
-Activation de la supervision via Prometheus/Grafana.
-
-Intégration de SSO/MFA si pas encore en place.
-
-Renforcement sécurité Zero Trust.
+- Ajout de métriques personnalisées pour les services critiques  
+- Automatisation du déploiement avec Ansible  
+- Revue régulière des seuils d’alerte  
+- Extension de la supervision à la filiale de Paris
