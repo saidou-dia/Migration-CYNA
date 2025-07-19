@@ -6,9 +6,8 @@ Voici une vue simplifiée de l’architecture cible combinant les environnements
 
 ![Schéma de l’infrastructure cible](./00-docs/infra/schema_azure_paris_geneve.png)
 
-Ce projet a pour objectif de centraliser et moderniser l'infrastructure IT de la nouvelle filiale de Paris en l'intégrant au nouveau siège de Genève, tout en tirant parti des capacités du cloud Microsoft Azure. 
-Cette démarche s'inscrit dans une stratégie de transformation digitale visant à renforcer la résilience, la sécurité et l’agilité de l’environnement informatique du groupe Cyna.
-
+Dans le cadre de son déménagement vers de nouveaux locaux à Genève, la société Cyna engage une modernisation complète de ses infrastructures informatiques, en s'appuyant sur des solutions technologiques avancées. 
+L’objectif principal est de renforcer la sécurité, d’optimiser les performances, et de soutenir la croissance stratégique de l’entreprise grâce à une infrastructure agile, résiliente et évolutive
 ---
 
 ## Objectifs
