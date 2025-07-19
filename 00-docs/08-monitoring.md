@@ -107,7 +107,8 @@
 ## ✅ 10. Résumé
 Cette solution répond aux contraintes d’un modèle SaaS multi-sites (Paris – Genève) en combinant supervision, sécurité et résilience sur les environnements cloud (Azure) et on-prem. 
 Nous avons volontairement retenu une approche minimaliste, efficace, et évolutive.
-Cette stratégie hybride **"less is more"** :
+Nous avons privilégié une solution allégée mais robuste, capable de superviser efficacement l’ensemble de l’infrastructure hybride entre Paris et Genève,
+tout en optimisant les coûts et la simplicité d’exploitation :
 
 - ❌ Supprime la redondance entre Nagios, PRTG, SolarWinds, etc.
 - ✅ Centralise toutes les vues (cloud + on-prem) dans **Grafana**
