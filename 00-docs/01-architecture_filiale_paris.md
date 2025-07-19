@@ -2,9 +2,8 @@
 
 ## Fournisseurs d'accès Internet (FAI)
 
-- **FAI N°1** : Orange
-- **FAI N°2** : Fibre optique Bouygues
-- **WAN Backup Link** : 4G/5G
+- **FAI N°1** : Fibre optique Orange
+- **FAI N°2** : Fibre optique Bouygues failover automatique (backup)
 
 ## Équipements réseau
 
