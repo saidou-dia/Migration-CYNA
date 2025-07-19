@@ -5,7 +5,15 @@
 - **FAI principal** : Telecom Swisscom SD-WAN (2 liens WAN en redondance HA)  
 - **Pare-feux** : 2x FortiGate / pfSense en haute disponibilité  
 - **Load Balancer externe** : HAProxy en HA  
-- **Routeur Core** : Inter-VLAN routing (VLAN A et B)  
+- **Routeur Core** : Inter-VLAN routing (VLAN A et B)
+  
+## Connectivité VPN liée au Siège Genève
+
+| Origine      | Destination    | Type de lien     | Raison / Service                        |
+|--------------|----------------|------------------|---------------------------------------|
+| Filiale_Paris| Siège_Genève   | VPN Site-to-Site | Connexion centrale (AD, infra)         |
+| Siège_Genève | Azure_Genève   | VPN Site-to-Site | PCA principal                         |
+| Siège_Genève | Azure_Paris    | VPN Site-to-Site | PRA                                   |
 
 ## Kubernetes
 
