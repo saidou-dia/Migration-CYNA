@@ -38,5 +38,3 @@
 | Azure_Genève  | Azure_Paris       | Global Peering    | Réplication / haute dispo|
 
 ---
-
-N'hésitez pas à me demander si tu souhaites que j'intègre cela avec l'architecture Azure Genève ou dans un document plus global, ou si tu veux d'autres formats !
