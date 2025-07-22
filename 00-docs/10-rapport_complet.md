@@ -6,7 +6,7 @@
 
 ### Mois concerné : Juillet 2025
 
-#### 🔧 Activités réalisées :
+#### Activités réalisées :
 - Mise en place des solutions EDR/XDR sur l’ensemble du parc informatique.
 - Configuration initiale de Graylog et QRadar pour centralisation des logs.
 - Tests de détection d’anomalies réseau avec alertes automatisées.
