@@ -55,7 +55,7 @@ La politique de sauvegarde est une composante essentielle du Plan de Continuité
 
 ## Lien avec le PCA/PRA
 
-Cette politique de sauvegarde s’intègre pleinement dans la stratégie globale de continuité et de reprise d’activité définie dans le dossier `06-pca-pra/`.
+Cette politique de sauvegarde s’intègre pleinement dans la stratégie globale de continuité et de reprise d’activité définie dans le dossier `10-pca-pra/`.
 
 Pour une vision complète des plans de bascule, reprise et continuité, ainsi que des rôles et responsabilités associées, consulter le dossier :
 
