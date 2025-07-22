@@ -1,4 +1,4 @@
-# 08 - Monitoring & Supervision
+# 05 - Monitoring & Supervision
 
 Ce répertoire centralise toute la stratégie de **supervision proactive** de l'infrastructure, des applications et des utilisateurs, en intégrant des outils de type Prometheus, Grafana, EDR/XDR, SIEM et autres solutions spécialisées réseau/cloud.
 
