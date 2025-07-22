@@ -32,6 +32,19 @@ L’objectif est d’assurer une migration progressive, contrôlée, et réversi
 | Clôture      | Validation finale de bascule                | 28 octobre 2025            | DSI / IT Genève      |
 
 ---
+## Version 2 – Tableau à compléter par le client
+
+Ce tableau est destiné à être rempli une fois que les équipes client auront précisé les services, responsables et volumes exacts par lot.
+
+| Lot | Service / Équipe        | Nombre d'utilisateurs | Responsable | Date de migration prévue |
+|-----|-------------------------|------------------------|-------------|---------------------------|
+| 1   |                         |                        |             |                           |
+| 2   |                         |                        |             |                           |
+| 3   |                         |                        |             |                           |
+| 4   |                         |                        |             |                           |
+| 5   |                         |                        |             |                           |
+| 6   |                         |                        |             |                           |
+
 
 ##  Objectifs post-migration par lot
 
