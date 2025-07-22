@@ -31,6 +31,33 @@ L’objectif est d’assurer une migration progressive, contrôlée, et réversi
 | Validation   | Audit post-migration complet                | 24 – 25 octobre 2025       | IT Genève            |
 | Clôture      | Validation finale de bascule                | 28 octobre 2025            | DSI / IT Genève      |
 
+
+## Processus de migration par lot
+
+1. **Préparation des utilisateurs** : communication des dates, consignes, sauvegardes.
+2. **Snapshot & sauvegarde** : prise d’images instantanées des données et profils.
+3. **Migration technique** : transfert des profils, données, et configurations.
+4. **Tests post-migration** : validation des accès, applications, et performances.
+5. **Support renforcé** : assistance dédiée pour résoudre rapidement les incidents.
+6. **Validation finale** : confirmation de la réussite et passage au lot suivant.
+
+---
+
+## Équipes impliquées
+
+| Domaine         | Responsables            |
+|-----------------|------------------------|
+| Infrastructure  | IT Genève              |
+| Cloud & Azure   | CloudOps               |
+| Sécurité        | SecOps / MSSP          |
+| Déploiement     | DevOps / IT Paris      |
+| Support         | Helpdesk Paris & Genève|
+
+---
+
+> 💡 **Note** : ce planning est évolutif et sera ajusté en fonction des retours terrains et des contraintes opérationnelles.
+
+---
 ---
 ## Version 2 – Tableau à compléter par le client
 
