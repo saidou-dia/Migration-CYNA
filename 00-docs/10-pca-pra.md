@@ -65,6 +65,6 @@ Cette solution hybride offre une **stratégie de résilience complète** intégr
 
 Elle garantit la **continuité de service, la sécurité, et l’optimisation des coûts** à travers un PRA/PCA éprouvé, testé et automatisé.
 
-🔗 Voir les politiques de sauvegarde et restaurations détaillées dans [`16.global_backup_policy.md/`](../16.global_backup_policy.md/)
+Voir les politiques de sauvegarde et restaurations détaillées dans [`16.global_backup_policy.md/`](../16.global_backup_policy.md/)
 
 
