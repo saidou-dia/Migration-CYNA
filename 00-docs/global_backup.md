@@ -1,4 +1,4 @@
-# Politique Globale de Sauvegarde et de Reprise (Backup Policy)
+# 16. Politique Globale de Sauvegarde et de Reprise (Backup Policy)
 
 ## Introduction
 
