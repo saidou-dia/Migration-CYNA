@@ -4,8 +4,7 @@ Schéma de l'infrastructure cible
 
 Voici une vue simplifiée de l’architecture cible combinant les environnements Azure et on-premise (Genève et Paris ).
 
-
-![Schéma de l’infrastructure cible](./00-docs/infra/schema_azure_paris_geneve.png)
+<img width="1026" height="584" alt="image" src="https://github.com/user-attachments/assets/f70a0698-c39b-41ba-8ec4-4c917de59074" />
 
  
  Dans le cadre de son déménagement vers de nouveaux locaux à Genève, la société Cyna engage une modernisation complète de ses infrastructures informatiques, en s'appuyant sur des solutions technologiques avancées. L’objectif principal est de renforcer la sécurité, d’optimiser les performances et de soutenir la croissance stratégique de l’entreprise grâce à une infrastructure agile, résiliente et évolutive.
