@@ -1,10 +1,10 @@
-# 10. Rapport Complet – Suivi, Sécurité, Logiciels, Recette et Automatisation
+# Rapport Complet – Suivi, Sécurité, Logiciels, Recette et Automatisation
 
 ---
 
-## Rapport Mensuel
+##  Rapport Mensuel
 
-### Mois concerné : Juillet 2025
+### Mois concerné : Novembre 2025
 
 #### Activités réalisées :
 - Mise en place des solutions EDR/XDR sur l’ensemble du parc informatique.
@@ -17,7 +17,7 @@
 -  Tentative de brute-force sur serveur AD Genève détectée et bloquée.
 -  Erreur de synchronisation temporaire des logs Paris vers QRadar Azure.
 
-####  Correctifs appliqués :
+#### Correctifs appliqués :
 - Mise à jour des règles de pare-feu internes.
 - Ajout de sources de logs depuis Paris vers Graylog via VPN sécurisé.
 
@@ -59,7 +59,7 @@
 
 ## Procès-Verbal de Recette
 
-### Date : 21/07/2025
+### Date : 21/11/2025
 ### Participants :
 - Chef de Projet Infrastructure
 - MOA
