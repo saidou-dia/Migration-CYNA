@@ -1,0 +1,7 @@
+{
+  "profileName": "SecureVPNConfig",
+  "encryptionLevel": "AES256",
+  "authentication": "certificate + PSK",
+  "allowSplitTunnel": false,
+  "requireMFA": true
+}

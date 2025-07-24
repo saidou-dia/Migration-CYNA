@@ -1,0 +1,9 @@
+{
+  "vpnName": "CorporateVPN",
+  "connectionType": "ikev2",
+  "servers": ["vpn.paris.company.com"],
+  "authenticationMethod": "certificate",
+  "alwaysOn": true,
+  "splitTunnel": false,
+  "dnsSearchDomains": ["corp.company.com"]
+}
