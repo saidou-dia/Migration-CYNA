@@ -39,8 +39,26 @@ Ce document présente les solutions recommandées pour répondre aux exigences d
 
 ## Service d’annuaire
 
-- **Solution proposée** : `Active Directory (AD)`  
+- **Solution proposée** : `Synchronisation Active Directory / Azure`  
 - **Objectif** : Gestion centralisée des utilisateurs, groupes, périphériques et ressources du réseau.
+
+-Solution proposée : Microsoft Entra Connect (Azure AD Connect)
+-Synchronisation des identités entre Active Directory on-premises et Azure AD
+-Maintien d’un annuaire hybride cohérent pour les scénarios cloud-first et hybrides
+-Support de la synchronisation des mots de passe, des objets, et du SSO hybride
+-Point d’ancrage pour les stratégies de sécurité cloud comme Conditional Access, MFA, et DLP
+
+[ Utilisateurs ] 
+      ↓
+[ Active Directory On-Prem ]
+      ↓
+[ Microsoft Entra Connect (Azure AD Connect) ]
+      ↓
+[ Microsoft Entra ID (Azure AD) ]
+      ↓         ↓             ↓
+ [SSO]     [MFA]     [DLP / Conditional Access]
+
+
 
 ## Gestion des droits utilisateurs
 

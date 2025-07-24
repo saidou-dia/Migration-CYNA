@@ -1,0 +1,1 @@
+# Guide des EventID critiques pour AD

@@ -1,0 +1,1 @@
+# Script d'installation d'Azure AD Connect
