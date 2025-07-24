@@ -1,0 +1,12 @@
+{
+  "name": "Windows Device Configuration Profile",
+  "platform": "windows10AndLater",
+  "profileType": "Endpoint protection",
+  "settings": {
+    "usbBlock": true,
+    "firewallEnabled": true,
+    "defenderRealTimeMonitoring": true,
+    "smartScreen": true,
+    "controlledFolderAccess": true
+  }
+}

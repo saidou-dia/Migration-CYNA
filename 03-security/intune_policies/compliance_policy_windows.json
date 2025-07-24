@@ -1,0 +1,12 @@
+{
+  "name": "Windows Compliance Policy",
+  "description": "Conformité Windows 10/11",
+  "platform": "windows10AndLater",
+  "settings": {
+    "passwordRequired": true,
+    "bitLockerRequired": true,
+    "antivirusRequired": true,
+    "osMinimumVersion": "10.0.19045.0",
+    "jailbreakDetection": true
+  }
+}
