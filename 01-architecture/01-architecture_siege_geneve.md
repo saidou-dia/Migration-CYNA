@@ -53,7 +53,7 @@
 - **VLAN 50** : Imprimantes partagées (PrintSrv)  
 - **VLAN 70** : CCTV / vidéosurveillance / monitoring  
 
-## SOC interne (VLAN 91)
+## SOC interne (VLAN 90)
 
 Environnement sécurisé pour infrastructure critique SOC :  
 Splunk, QRadar, ELK, Wazuh, SOAR, VMs analystes  
@@ -80,7 +80,7 @@ NAS TrueNAS
 | 50    | Imprimantes partagées                                  |
 | 60    | WiFi invités (Internet uniquement, segment isolé)     |
 | 70    | Caméras de vidéosurveillance / monitoring CCTV         |
-| 91    | SOC interne (SIEM, SOAR, analystes)                    |
+| 90    | SOC interne (SIEM, SOAR, analystes)                    |
 | 99    | Admin / Bastion + accès sécurisés                       |
 
 ---
