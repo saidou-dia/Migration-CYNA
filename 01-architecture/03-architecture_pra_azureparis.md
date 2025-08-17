@@ -1,6 +1,6 @@
 # Architecture PRA Azure Paris (Azure France Central)
 
-## VNet Principal (vnet-pra-azure-paris)
+## VNet Principal (vnet-pra-paris)
 - **Adresse VNet** : 10.40.0.0/16
 
 ### Subnets et Services
@@ -18,7 +18,7 @@
 
 ---
 
-## Hub Réseau PRA Paris (vnet-hub-pra-paris)
+## Hub Réseau PRA Paris (vnet-hub-paris)
 - **Adresse VNet** : 10.50.0.0/16
 
 | Subnet              | CIDR             | Description / Services                   |
