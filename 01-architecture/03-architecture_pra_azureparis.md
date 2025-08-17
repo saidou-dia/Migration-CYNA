@@ -11,7 +11,7 @@
 | Subnet-SIEM-EDR/XDR   | 10.40.40.0/24  | Logs, alertes                                          |
 | Subnet-VirtualInfra   | 10.40.30.0/24  | VM, Agents Azure Arc, serveurs                         |
 | Subnet-DevOps-SaaS    | 10.40.60.0/24  | Services DevOps et SaaS                                |
-| Subnet-PRA-Users      | 10.40.60.0/24  | Postes utilisateurs                                    |
+| Subnet-PRA-Users      | 10.40.61.0/24  | Postes utilisateurs                                    |
 | Subnet-PRA-FileSync   | 10.40.20.0/24  | Azure File Sync                                        |
 | Subnet-Backup         | 10.40.11.0/24  | Backup, Veeam, Azure Backup Vault                      |
 | Subnet-ASR-RecoveryVM | 10.40.50.0/24  | Machines virtuelles Azure Site Recovery (ASR)         |
