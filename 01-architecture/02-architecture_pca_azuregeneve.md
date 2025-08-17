@@ -22,6 +22,13 @@
 ## Réseau Production Principal (VNet-PCA-Azure-Geneve)
 - **Adresse VNet** : 10.20.0.0/16
 - Utilisation : Réseau principal pour le PCA (Plan de Continuité d’Activité) Azure Genève, incluant réplication applicative, bases de données et sauvegardes.
+| Subnet                     | CIDR           | Services / Rôles                                                                                  |
+|-----------------------------|----------------|--------------------------------------------------------------------------------------------------|
+| Subnet-PCA-Backup           | 10.20.10.0/24  | Réplication backup via Veeam, Azure Site Recovery                                                |
+| Subnet-PCA-SOC              | 10.20.20.0/24  | Réplication logs SIEM Splunk, supervision sécurité                                               |
+| Subnet-PCA-AD-Replica       | 10.20.30.0/24  | Contrôleurs de domaine de secours, réplication AD                                               |
+| Subnet-PCA-Storage          | 10.20.40.0/24  | Azure File Sync, Blob Storage pour PRA                                                          |
+| Subnet-PCA-Virtualisation   | 10.20.50.0/24  | Azure Arc : VM hybrides pour tests PRA, extensions Arc, gestion centralisée                     |
 
 ### SOC - SIEM local (Splunk)
 - Logs centralisés  
