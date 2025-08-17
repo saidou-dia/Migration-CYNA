@@ -5,14 +5,17 @@
 
 ### Subnets et Services
 
-| Subnet                     | CIDR           | Description / Services                                  |
-|----------------------------|----------------|--------------------------------------------------------|
-| MonitoringSubnet           | 10.30.100.0/24 | Prometheus, Grafana, Alertmanager, Zscaler Tunnel GW  |
-| GRE/IPSec to ZIA           | 10.30.251.0/28 | Tunnel GRE/IPSec vers Zscaler Internet Access (ZIA)    |
-| DNS ResolverSubnet         | 10.30.252.0/27 | Azure DNS Resolver                                     |
-| AzureFirewallSubnet        | 10.30.253.0/26 | Filtrage HTTP/HTTPS via Azure Firewall                 |
-| AzureBastionSubnet         | 10.30.254.0/27 | Azure Bastion (accès sécurisé à VMs)                   |
-| GatewaySubnet              | 10.30.255.0/27 | VPN Gateway (P2S et S2S, IPSec/OpenVPN)                |
+| Subnet                  | CIDR           | Services / Rôles                                                                                  |
+|-------------------------|----------------|--------------------------------------------------------------------------------------------------|
+| subnet-lb-app-geneve    | 10.10.10.0/24  | Azure Application Gateway (WAF, SSL), accès public : plateforme.shop.cyna.com                     |
+| subnet-dmz-geneve       | 10.10.20.0/24  | K8s Shop Front (Web), K8s SaaS Front, 4 VMs (16 Go, 4 vCPU), Prometheus                           |
+| subnet-app-geneve       | 10.10.30.0/24  | API SaaS / Shop, Services internes métier, Prometheus                                             |
+| subnet-db-geneve        | 10.10.40.0/24  | Bases de données PostgreSQL / MySQL / Oracle, Serveurs comptabilité / trésorerie                  |
+| subnet-DevOps-Geneve    | 10.10.50.0/24  | Services DevOps internes, développement SaaS                                                     |
+| subnet-users-geneve     | 10.10.60.0/24  | Postes utilisateurs, accès distants sécurisés (P2S/S2S/MFA)                                      |
+| subnet-admin-geneve     | 10.10.70.0/24  | Active Directory DS, GPO, SSO, IaC                                                              |
+| subnet-security-geneve  | 10.10.80.0/24  | EDR/XDR Microsoft Defender, Firewalls virtuels, SIEM (Splunk), ZTNA, MFA                         |
+
 
 ---
 
