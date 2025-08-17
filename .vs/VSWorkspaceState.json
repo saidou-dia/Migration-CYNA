@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\02-infra",
+    "\\04-devops",
+    "\\04-devops\\01-terraform",
+    "\\04-devops\\01-terraform\\environments",
+    "\\04-devops\\01-terraform\\environments\\dev",
+    "\\04-devops\\01-terraform\\environments\\staging",
+    "\\04-devops\\01-terraform\\intune"
+  ],
+  "SelectedNode": "\\02-infra\\network_connectivity.md",
+  "PreviewInSolutionExplorer": false
+}
