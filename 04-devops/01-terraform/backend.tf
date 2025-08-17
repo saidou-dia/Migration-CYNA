@@ -1,8 +1,8 @@
 terraform {
   backend "azurerm" {
-    resource_group_name  = "rg-terraform-backend"
-    storage_account_name = "stterraformbackend"
+    resource_group_name  = "rg-paris-hub"
+    storage_account_name = "pratfparis"
     container_name       = "tfstate"
-    key                  = "network.tfstate"  # Tu peux changer pour chaque site si nécessaire
+    key                  = "pra.terraform.tfstate"
   }
 }
