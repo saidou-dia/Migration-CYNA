@@ -16,7 +16,7 @@ variable "subnets" {
     # Genève - Production
     # =========================
     gva_prod = {
-      location       = var.locations.geneve
+      location       = "Switzerland North"
       resource_group = "rg-geneve-prod"
       address_space  = ["10.10.0.0/16"]
       subnets = [
@@ -34,7 +34,7 @@ variable "subnets" {
     # Genève - Hub
     # =========================
     gva_hub = {
-      location       = var.locations.geneve
+      location       = "Switzerland North"
       resource_group = "rg-geneve-hub"
       address_space  = ["10.30.0.0/16"]
       subnets = [
@@ -49,7 +49,7 @@ variable "subnets" {
     # Genève - PCA
     # =========================
     pca_gva = {
-      location       = var.locations.geneve
+      location       = "Switzerland North"
       resource_group = "rg-geneve-prod"
       address_space  = ["10.20.0.0/16"]
       subnets = [
@@ -65,7 +65,7 @@ variable "subnets" {
     # Paris - PRA
     # =========================
     pra_paris = {
-      location       = var.locations.paris
+      location       = "France Central"
       resource_group = "rg-paris-pra"
       address_space  = ["10.40.0.0/16"]
       subnets = [
@@ -84,7 +84,7 @@ variable "subnets" {
     # Paris - Hub
     # =========================
     hub_paris = {
-      location       = var.locations.paris
+      location       = "France Central"
       resource_group = "rg-paris-hub"
       address_space  = ["10.50.0.0/16"]
       subnets = [

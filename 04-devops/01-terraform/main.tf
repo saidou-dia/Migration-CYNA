@@ -1,12 +1,10 @@
-# Fournisseur Azure
 provider "azurerm" {
   features {}
 }
 
-# Variable pour l'environnement
 variable "environment" {
   type    = string
-  default = "prod"   # tu peux changer en dev, test, etc.
+  default = "prod"
 }
 
 # Création des VNETs
@@ -26,16 +24,7 @@ resource "azurerm_virtual_network" "vnet" {
 
 # Création des subnets
 resource "azurerm_subnet" "subnet" {
-  for_each = {
-    for vnet_name, vnet in local.vnets :
-    for subnet in vnet.subnets : "${vnet_name}_${subnet.name}" => {
-      vnet_name  = vnet_name
-      rg_name    = vnet.resource_group
-      subnet_name = subnet.name
-      prefix     = subnet.prefix
-      purpose    = subnet.purpose
-    }
-  }
+  for_each = local.all_subnets
 
   name                 = each.value.subnet_name
   resource_group_name  = each.value.rg_name

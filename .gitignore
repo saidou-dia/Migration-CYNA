@@ -1,10 +1,13 @@
 # Logs
 *.log
+crash.log
 
 # Terraform
 *.tfstate
+*.tfstate.*
 *.tfstate.backup
 .terraform/
+*.tfvars
 
 # Ansible
 *.retry
@@ -19,7 +22,6 @@ kubeconfig*
 dist/
 build/
 tmp/
-*.bak
 
 # IDE / Editors
 .vscode/
@@ -30,21 +32,17 @@ tmp/
 .DS_Store
 Thumbs.db
 
+# Env / Secrets
+*.env
+.env.local
+secrets.yml
+
+# Python
+__pycache__/
 
 # Markdown backup
 *.md.bak
 
-
-*.log
+# Temporary files
 *.tmp
 *.bak
-*.swp
-.vscode/
-*.env
-__pycache__/
-terraform.tfstate*
-
-*.tfvars
-.env.local
-secrets.yml
-
