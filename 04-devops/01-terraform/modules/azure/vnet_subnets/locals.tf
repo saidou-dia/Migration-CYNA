@@ -1,29 +1,14 @@
 locals {
-  # ----------------------------
-  # VNETs à partir des variables
-  # ----------------------------
-  vnets = {
-    for vnet_key, vnet_value in var.subnets :
-    vnet_key => {
-      location       = vnet_value.location
-      resource_group = vnet_value.resource_group
-      address_space  = vnet_value.address_space
-      subnets        = vnet_value.subnets
-    }
-  }
+  vnets = var.vnets
 
-  # ----------------------------
-  # Aplatir tous les subnets pour le for_each
-  # ----------------------------
+  # Flatten des subnets en map avec clé unique
   all_subnets_flat = merge([
     for vnet_name, vnet in local.vnets : {
-      for subnet in vnet.subnets : "${vnet_name}_${subnet.name}" => {
+      for s in vnet.subnets : "${vnet_name}_${s.name}" => {
+        subnet_name = s.name
+        prefix      = s.prefix
+        purpose     = s.purpose
         vnet_name   = vnet_name
-        rg_name     = vnet.resource_group
-        subnet_name = subnet.name
-        prefix      = subnet.prefix
-        purpose     = subnet.purpose
-        location    = vnet.location
       }
     }
   ]...)

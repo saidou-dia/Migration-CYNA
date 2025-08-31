@@ -1,8 +1,10 @@
 terraform {
+  required_version = ">= 1.5.0"
+
   backend "azurerm" {
-    resource_group_name  = "rg-gva-dev-hub"   # RG Dev Hub Genève
-    storage_account_name = "devtfgva"         # Storage Account Dev
-    container_name       = "tfstate"          # Container pour le tfstate
-    key                  = "dev.geneve.tfstate" # Nom du fichier tfstate
+    resource_group_name  = "rg-terraform-state"
+    storage_account_name = "stterraformsaidoudia2025"
+    container_name       = "tfstate"
+    key                  = "network.tfstate"
   }
 }
