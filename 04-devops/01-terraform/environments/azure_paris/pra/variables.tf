@@ -1,3 +1,6 @@
+# ==============================
+# Azure Credentials
+# ==============================
 variable "subscription_id" {
   description = "ID de l'abonnement Azure"
   type        = string
@@ -18,6 +21,9 @@ variable "client_secret" {
   type        = string
 }
 
+# ==============================
+# General Configuration
+# ==============================
 variable "location" {
   description = "Azure region"
   type        = string
@@ -28,7 +34,24 @@ variable "resource_group" {
   type        = string
 }
 
+# ==============================
+# VNET Configuration
+# ==============================
 variable "vnets" {
   description = "Map des VNETs et subnets"
   type        = map(any)
 }
+
+
+
+
+variable "subnet_virtualinfra_id" {
+  description = "ID du subnet VirtualInfra"
+  type        = string
+}
+
+variable "subnet_users_id" {
+  description = "ID du subnet Users"
+  type        = string
+}
+

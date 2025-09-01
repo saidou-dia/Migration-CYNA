@@ -27,3 +27,9 @@ output "all_subnets" {
     }
   }
 }
+
+output "subnet_ids" {
+  description = "Map des IDs des subnets créés"
+  value = { for k, s in azurerm_subnet.subnet : k => s.id }
+}
+
