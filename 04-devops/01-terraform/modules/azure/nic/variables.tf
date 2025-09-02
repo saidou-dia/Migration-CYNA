@@ -8,3 +8,12 @@ variable "resource_group" {
   type        = string
 }
 
+variable "subnet_virtualinfra_id" {
+  description = "ID du subnet VirtualInfra"
+  type        = string
+}
+
+variable "subnet_users_id" {
+  description = "ID du subnet Users"
+  type        = string
+}

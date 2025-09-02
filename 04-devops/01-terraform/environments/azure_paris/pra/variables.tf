@@ -1,57 +1,21 @@
-# ==============================
 # Azure Credentials
-# ==============================
-variable "subscription_id" {
-  description = "ID de l'abonnement Azure"
-  type        = string
-}
+variable "subscription_id" {}
+variable "tenant_id" {}
+variable "client_id" {}
+variable "client_secret" {}
 
-variable "tenant_id" {
-  description = "ID du tenant Azure"
-  type        = string
-}
+# Général
+variable "location" {}
+variable "resource_group" {}
 
-variable "client_id" {
-  description = "Client ID de l'application/service principal"
-  type        = string
-}
-
-variable "client_secret" {
-  description = "Client Secret de l'application/service principal"
-  type        = string
-}
-
-# ==============================
-# General Configuration
-# ==============================
-variable "location" {
-  description = "Azure region"
-  type        = string
-}
-
-variable "resource_group" {
-  description = "Nom du Resource Group principal"
-  type        = string
-}
-
-# ==============================
-# VNET Configuration
-# ==============================
+# VNETs et subnets
 variable "vnets" {
-  description = "Map des VNETs et subnets"
-  type        = map(any)
+  description = "Map des VNETs et leurs subnets"
+  type = map(any)
 }
 
-
-
-
-variable "subnet_virtualinfra_id" {
-  description = "ID du subnet VirtualInfra"
-  type        = string
+# VMs
+variable "vms" {
+  description = "Map des VMs à créer"
+  type = map(any)
 }
-
-variable "subnet_users_id" {
-  description = "ID du subnet Users"
-  type        = string
-}
-

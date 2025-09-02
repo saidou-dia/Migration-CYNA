@@ -1,24 +1,24 @@
 resource "azurerm_linux_virtual_machine" "vm" {
-  for_each            = var.vms
-  name                = each.key
-  location            = each.value.location
-  resource_group_name = each.value.resource_group
-  network_interface_ids = each.value.network_interface_ids
-  size                = each.value.size
+  for_each = var.vms
 
-  admin_username = each.value.admin_username
-  admin_password = each.value.admin_password
+  name                = "vm-${each.key}"  # génère vm-vm1, vm-vm2
+  resource_group_name = each.value.resource_group
+  location            = each.value.location
+  size                = each.value.size
+  admin_username      = each.value.admin_username
+  admin_password      = each.value.admin_password
+  network_interface_ids = each.value.network_interface_ids
 
   os_disk {
-    name              = "${each.key}-osdisk"
-    caching           = "ReadWrite"
+    caching              = "ReadWrite"
     storage_account_type = "Standard_LRS"
+    disk_size_gb         = each.value.os_disk_size_gb
   }
 
   source_image_reference {
-    publisher = "Canonical"
-    offer     = "UbuntuServer"
-    sku       = "18.04-LTS"
-    version   = "latest"
+    publisher = each.value.source_image_reference.publisher
+    offer     = each.value.source_image_reference.offer
+    sku       = each.value.source_image_reference.sku
+    version   = each.value.source_image_reference.version
   }
 }
