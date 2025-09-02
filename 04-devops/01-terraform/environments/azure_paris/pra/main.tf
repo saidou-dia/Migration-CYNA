@@ -10,9 +10,7 @@ provider "azurerm" {
   client_secret   = var.client_secret
 }
 
-# ==============================
-# VNET + Subnets Module
-# ==============================
+# VNET + Subnets
 module "vnet_paris" {
   source = "../../../modules/azure/vnet_subnets"
 
@@ -24,9 +22,7 @@ module "vnet_paris" {
   vnets = var.vnets
 }
 
-# ==============================
-# NIC Module
-# ==============================
+# NICs
 module "nic_pra" {
   source = "../../../modules/azure/nic"
 
@@ -36,34 +32,16 @@ module "nic_pra" {
   subnet_users_id        = module.vnet_paris.all_subnets_flat["vnet_pra_paris_Subnet-PRA-Users"].id
 }
 
-# ==============================
-# VM Module
-# ==============================
+# VMs
 module "vm_pra" {
   source = "../../../modules/azure/vm"
 
-  vms = var.vms
-}
-  
-# ==============================
-# Outputs
-# ==============================
-output "nic1_id" {
-  description = "ID de la première NIC"
-  value       = module.nic_pra.nic1_id
-}
-
-output "nic2_id" {
-  description = "ID de la deuxième NIC"
-  value       = module.nic_pra.nic2_id
-}
-
-output "vm1_id" {
-  description = "ID de la VM1"
-  value       = module.vm_pra.vms["vm1"].id
-}
-
-output "vm2_id" {
-  description = "ID de la VM2"
-  value       = module.vm_pra.vms["vm2"].id
+  vms = {
+    vm1 = merge(var.vms["vm1"], {
+      network_interface_ids = [module.nic_pra.nic1_id]
+    })
+    vm2 = merge(var.vms["vm2"], {
+      network_interface_ids = [module.nic_pra.nic2_id]
+    })
+  }
 }
