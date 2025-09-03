@@ -28,17 +28,10 @@ variable "vnets" {
   }))
 }
 
+
 variable "vms" {
-  type = map(object({
-    resource_group                  = string
-    location                        = string
-    size                            = string
-    admin_username                  = string
-    admin_password                  = string # <-- ici
-    disable_password_authentication = bool
-    admin_ssh_key                   = any
-    os_disk_size_gb                 = number
-    source_image_reference          = any
-  }))
-  default = {}
+  description = "Map des VMs à créer"
+  type        = map(any)
+  default     = {}
 }
+

@@ -14,8 +14,8 @@ variable "vnets" {
   type = map(any)
 }
 
-# VMs
 variable "vms" {
   description = "Map des VMs à créer"
-  type = map(any)
+  type        = map(any)
+  default     = {}   # ou mettre ton local.vms ici
 }

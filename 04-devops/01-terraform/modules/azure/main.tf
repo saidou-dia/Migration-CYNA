@@ -6,19 +6,8 @@ resource "azurerm_linux_virtual_machine" "vm" {
   location            = each.value.location
   size                = each.value.size
   admin_username      = each.value.admin_username
-  disable_password_authentication = each.value.disable_password_authentication
+  admin_password      = each.value.admin_password
   network_interface_ids = each.value.network_interface_ids
-
-  admin_password = each.value.admin_password  # nécessaire pour Terraform
-
-  # Bloc SSH dynamique
-  dynamic "admin_ssh_key" {
-    for_each = each.value.admin_ssh_key != null ? [each.value.admin_ssh_key] : []
-    content {
-      username   = admin_ssh_key.value.username
-      public_key = admin_ssh_key.value.public_key
-    }
-  }
 
   os_disk {
     caching              = "ReadWrite"
