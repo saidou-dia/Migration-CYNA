@@ -1,0 +1,9 @@
+﻿---
+timezone: 'Europe/Paris'
+packages:
+  - nginx
+  - docker.io
+users:
+  - name: saidou
+    groups: sudo
+    ssh_key: '{{ lookup("file", "~/.ssh/id_rsa_terraform.pub") }}'

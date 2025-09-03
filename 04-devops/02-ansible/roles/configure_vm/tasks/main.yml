@@ -1,0 +1,17 @@
+﻿- name: Mettre à jour le système
+  apt:
+    update_cache: yes
+    upgrade: dist
+
+- name: Installer les packages nécessaires
+  apt:
+    name: '{{ packages }}'
+    state: present
+
+- name: Ajouter utilisateur(s)
+  user:
+    name: '{{ item.name }}'
+    groups: '{{ item.groups }}'
+    shell: /bin/bash
+    state: present
+  loop: '{{ users }}'

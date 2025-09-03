@@ -1,0 +1,7 @@
+﻿---
+- name: Configurer VMs Azure
+  hosts: azure_vms
+  become: yes
+
+  roles:
+    - configure_vm
