@@ -6,4 +6,4 @@ packages:
 users:
   - name: saidou
     groups: sudo
-    ssh_key: '{{ lookup("file", "~/.ssh/id_rsa_terraform.pub") }}'
+    ssh_key: "{{ lookup('file', '/mnt/c/Users/sdia/.ssh/id_rsa_terraform.pub') }}"

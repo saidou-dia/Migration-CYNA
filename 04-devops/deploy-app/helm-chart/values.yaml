@@ -1,0 +1,5 @@
+name: monapp
+replicaCount: 2
+image:
+  repository: registry.azurecr.io/monapp
+  tag: latest

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.name | default "monapp" }}
+spec:
+  replicas: {{ .Values.replicaCount | default 2 }}
+  selector:
+    matchLabels:
+      app: {{ .Values.name | default "monapp" }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.name | default "monapp" }}
+    spec:
+      containers:
+        - name: {{ .Values.name | default "monapp" }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          resources:
+            limits:
+              cpu: "500m"
+              memory: "512Mi"

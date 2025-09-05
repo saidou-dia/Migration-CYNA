@@ -1,0 +1,37 @@
+- name: Déployer l'application conteneurisée
+  hosts: localhost
+  vars_files:
+    - ../.env
+  tasks:
+
+    - name: Build Docker image
+      community.docker.docker_image:
+        build:
+          path: ../app
+        name: "{{ REGISTRY }}/{{ APP_NAME }}"
+        tag: "{{ IMAGE_TAG }}"
+        push: yes
+
+    - name: Set Kube context
+      command: kubectl config use-context {{ KUBE_CONTEXT }}
+
+    - name: Deploy or upgrade Helm release
+      community.kubernetes.helm:
+        name: "{{ HELM_RELEASE }}"
+        chart_path: "{{ HELM_CHART_PATH }}"
+        release_namespace: default
+        create_namespace: yes
+        values:
+          image:
+            repository: "{{ REGISTRY }}/{{ APP_NAME }}"
+            tag: "{{ IMAGE_TAG }}"
+          replicaCount: "{{ MIN_REPLICAS }}"
+
+    - name: Configure HPA (autoscaling)
+      command: >
+        kubectl autoscale deployment {{ APP_NAME }}
+        --cpu-percent={{ CPU_TARGET }}
+        --min={{ MIN_REPLICAS }}
+        --max={{ MAX_REPLICAS }}
+      args:
+        warn: false
