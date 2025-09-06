@@ -1,0 +1,27 @@
+name: Test Secret Azure
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  test-azure:
+    runs-on: ubuntu-latest
+    steps:
+      # Récupération du code du dépôt
+      - uses: actions/checkout@v3
+
+      # Connexion à Azure avec le secret
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      # Lister les Resource Groups pour vérifier la connexion
+      - name: List Azure Resource Groups
+        run: az group list -o table
+
+      # Optionnel : debug pour vérifier que le secret est bien passé (100 premiers caractères)
+      - name: Debug secret (truncated)
+        run: echo "${{ secrets.AZURE_CREDENTIALS }}" | head -c 100
