@@ -1,0 +1,71 @@
+name: CI/CD Pipeline CYNA
+
+# Déclencheur : à chaque push sur la branche main
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  # ------------------------
+  # 1. Linting
+  # ------------------------
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      # Lint Terraform
+      - name: Lint Terraform
+        run: terraform fmt -check
+
+      # Lint Ansible
+      - name: Lint Ansible
+        run: ansible-lint inventory pra-playbook.yml
+
+  # ------------------------
+  # 2. Tests unitaires
+  # ------------------------
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      # Terraform Tests (Terratest)
+      - name: Terraform Test
+        run: terratest -dir ./terraform
+
+      # Ansible Tests (Molecule)
+      - name: Ansible Test
+        run: molecule test
+
+  # ------------------------
+  # 3. Déploiement
+  # ------------------------
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [lint, test]
+    steps:
+      - uses: actions/checkout@v3
+
+      # Connexion à Azure via Service Principal
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      # Terraform Init
+      - name: Terraform Init
+        run: terraform init -backend-config=backend.tfvars ./terraform
+
+      # Terraform Plan
+      - name: Terraform Plan
+        run: terraform plan -var-file=terraform.tfvars ./terraform
+
+      # Terraform Apply
+      - name: Terraform Apply
+        run: terraform apply -auto-approve -var-file=terraform.tfvars ./terraform
+
+      # Exécution du playbook Ansible pour configuration des VMs
+      - name: Run Ansible Playbook
+        run: ansible-playbook -i inventory pra-playbook.yml
