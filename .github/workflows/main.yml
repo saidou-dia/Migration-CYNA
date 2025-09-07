@@ -1,10 +1,9 @@
 name: CI/CD Pipeline CYNA
 
-# Déclencheur : à chaque push sur la branche main
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   # ------------------------
@@ -17,11 +16,11 @@ jobs:
 
       # Lint Terraform
       - name: Lint Terraform
-        run: terraform fmt -check
+        run: terraform fmt -check ./04-devops/terraform
 
       # Lint Ansible
       - name: Lint Ansible
-        run: ansible-lint inventory pra-playbook.yml
+        run: ansible-lint ./04-devops/02-ansible/playbooks/configure_azure.yml
 
   # ------------------------
   # 2. Tests unitaires
@@ -33,11 +32,11 @@ jobs:
 
       # Terraform Tests (Terratest)
       - name: Terraform Test
-        run: terratest -dir ./terraform
+        run: terratest -dir ./04-devops/terraform
 
       # Ansible Tests (Molecule)
       - name: Ansible Test
-        run: molecule test
+        run: cd ./04-devops/02-ansible && molecule test
 
   # ------------------------
   # 3. Déploiement
@@ -48,7 +47,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      # Connexion à Azure via Service Principal
+      # Connexion à Azure
       - name: Login to Azure
         uses: azure/login@v1
         with:
@@ -56,16 +55,16 @@ jobs:
 
       # Terraform Init
       - name: Terraform Init
-        run: terraform init -backend-config=backend.tfvars ./terraform
+        run: terraform -chdir=./04-devops/terraform init -backend-config=backend.tfvars
 
       # Terraform Plan
       - name: Terraform Plan
-        run: terraform plan -var-file=terraform.tfvars ./terraform
+        run: terraform -chdir=./04-devops/terraform plan -var-file=terraform.tfvars
 
       # Terraform Apply
       - name: Terraform Apply
-        run: terraform apply -auto-approve -var-file=terraform.tfvars ./terraform
+        run: terraform -chdir=./04-devops/terraform apply -auto-approve -var-file=terraform.tfvars
 
-      # Exécution du playbook Ansible pour configuration des VMs
+      # Exécution du playbook Ansible
       - name: Run Ansible Playbook
-        run: ansible-playbook -i inventory pra-playbook.yml
+        run: ansible-playbook -i ./04-devops/02-ansible/inventory/azure ./04-devops/02-ansible/playbooks/configure_azure.yml
