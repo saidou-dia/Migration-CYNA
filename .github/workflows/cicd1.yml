@@ -1,0 +1,36 @@
+name: Test Secret Azure
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      # Connexion Azure
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      # Installer Terraform
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.5.0
+
+      # Terraform Init
+      - name: Terraform Init
+        run: terraform -chdir=./04-devops/terraform init -backend-config=backend.tfvars
+
+      # Terraform Plan
+      - name: Terraform Plan
+        run: terraform -chdir=./04-devops/terraform plan -var-file=terraform.tfvars
+
+      # Terraform Apply
+      - name: Terraform Apply
+        run: terraform -chdir=./04-devops/terraform apply -auto-approve -var-file=terraform.tfvars
